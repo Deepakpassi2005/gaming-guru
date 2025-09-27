@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamers Guru Reviews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* ========================================
+        NEW CYBERPUNK THEME CSS 
+        ========================================
+        */
+        :root {
+            --primary-glow: #00ffff; /* Cyan */
+            --secondary-glow: #ff00ff; /* Magenta */
+            --dark-bg: #0a041a; /* Deep violet */
+            --content-bg: rgba(15, 5, 40, 0.6); /* Translucent content bg */
+            --text-color: #f0f0f0;
+            --text-muted: #a0a0c0;
+        }
+
+        body {
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 2em 2em;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 4, 26, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary-glow);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+        
+        h1 > span {
+            color: var(--secondary-glow);
+            text-shadow: 0 0 8px var(--secondary-glow);
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-glow);
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .nav-link.active {
+            color: var(--primary-glow);
+            border-bottom-color: var(--primary-glow);
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--content-bg);
+            border: 1px solid var(--primary-glow);
+            border-radius: 0; /* Sharp edges */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+        
+        .card img {
+            filter: saturate(1.2);
+        }
+        
+        .card h3 {
+             color: var(--primary-glow);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: transparent;
+            border: 2px solid var(--secondary-glow);
+            color: var(--secondary-glow);
+            text-transform: uppercase;
+            padding: 10px 24px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 5px var(--secondary-glow), 0 0 5px var(--secondary-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-glow);
+            color: var(--dark-bg);
+            box-shadow: 0 0 20px var(--secondary-glow);
+        }
+
+        /* Form Inputs */
+        .form-input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--text-muted);
+            border-radius: 0;
+            transition: border-color 0.3s ease;
+            padding: 10px 0;
+            color: var(--text-color);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-glow);
+            box-shadow: none;
+        }
+        
+        label {
+            color: var(--secondary-glow);
+        }
+
+        /* Main Content Animation */
+        .page-content {
+            animation: glitch-load 0.7s ease-out;
+        }
+
+        @keyframes glitch-load {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px) skewX(20deg);
+            }
+            70% {
+                opacity: 1;
+                transform: translateX(10px) skewX(-5deg);
+            }
+            100% {
+                transform: translateX(0) skewX(0);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white uppercase tracking-widest">
+                Gamers<span>Guru</span>
+            </h1>
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <a href="#home" class="nav-link text-gray-300 font-semibold active">Home</a>
+                <a href="#about" class="nav-link text-gray-300 font-semibold">About</a>
+                <a href="#contact" class="nav-link text-gray-300 font-semibold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-8">
+
+        <section id="home" class="page-content">
+            <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-violet-500 pl-4">Latest Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card overflow-hidden">
+                    <img src="https://placehold.co/600x400/0a041a/00ffff?text=Starfall" alt="Game 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Starfall: Echoes of the Void</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-cyan-400">★★★★★</span>
+                            <span class="ml-2 text-sm text-gray-400">5/5</span>
+                        </div>
+                        <p class="text-base">
+                           A sprawling sci-fi epic that redefines the space opera genre. The freedom to explore countless star systems, combined with a deeply personal narrative, is simply breathtaking.
+                        </p>
+                    </div>
+                </div>
+                 <div class="card overflow-hidden">
+                    <img src="https://placehold.co/600x400/0a041a/00ffff?text=Chrono-Shift" alt="Game 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Chrono-Shift Arena</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-cyan-400">★★★★☆</span>
+                            <span class="ml-2 text-sm text-gray-400">4/5</span>
+                        </div>
+                        <p class="text-base">
+                            A fast-paced, competitive hero shooter where mastering time manipulation is key to victory. While the learning curve is steep, the strategic depth is incredibly rewarding.
+                        </p>
+                    </div>
+                </div>
+                 <div class="card overflow-hidden">
+                    <img src="https://placehold.co/600x400/0a041a/00ffff?text=Aerthos" alt="Game 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">The Sunken Kingdom of Aerthos</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-cyan-400">★★★★★</span>
+                            <span class="ml-2 text-sm text-gray-400">5/5</span>
+                        </div>
+                        <p class="text-base">
+                            An underwater RPG with an enchanting world and a compelling mystery. The level of detail in its submerged cities and ecosystems sets a new bar for environmental storytelling.
+                        </p>
+                    </div>
+                </div>
+                 <div class="card overflow-hidden">
+                    <img src="https://placehold.co/600x400/0a041a/00ffff?text=Ghost+Signal" alt="Game 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Ghost Signal</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-cyan-400">★★★★☆</span>
+                            <span class="ml-2 text-sm text-gray-400">4/5</span>
+                        </div>
+                        <p class="text-base">
+                           A genuinely terrifying psychological horror experience. It uses its unique radio signal mechanic to build suspense masterfully, though the combat can feel a bit clunky at times.
+                        </p>
+                    </div>
+                </div>
+                 <div class="card overflow-hidden">
+                    <img src="https://placehold.co/600x400/0a041a/00ffff?text=Project+Overdrive" alt="Game 5" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Project Overdrive</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-cyan-400">★★★★★</span>
+                            <span class="ml-2 text-sm text-gray-400">5/5</span>
+                        </div>
+                        <p class="text-base">
+                           Pure, unadulterated arcade racing fun. The vibrant tracks and over-the-top vehicle customization make every race a thrilling and chaotic spectacle. A must-play with friends.
+                        </p>
+                    </div>
+                </div>
+                 <div class="card overflow-hidden">
+                    <img src="https://placehold.co/600x400/0a041a/00ffff?text=Wyrmwood" alt="Game 6" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Wyrmwood Chronicles</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-cyan-400">★★★★★</span>
+                            <span class="ml-2 text-sm text-gray-400">5/5</span>
+                        </div>
+                        <p class="text-base">
+                           A charming fantasy adventure that empowers players with incredible world-building tools. The ability to craft your own spells and quests creates limitless possibilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-content hidden">
+            <div class="card p-8 max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-white mb-4">About Gamers Guru</h2>
+                <p class="mb-4">
+                    Gamers Guru is a passion project created by gamers, for gamers. We believe in honest, straightforward reviews that get right to the point. Our mission is to help you discover your next favorite game without any fluff.
+                </p>
+                <p class="mb-6">
+                    We cover everything from AAA blockbusters to indie gems. Our team spends countless hours playing and analyzing games to provide you with reviews you can trust. Thanks for stopping by!
+                </p>
+
+                <h3 class="text-xl font-bold text-white mb-2">Our Philosophy</h3>
+                <p class="mb-4">
+                    We score games based on a simple principle: how much fun did we have? We don't get bogged down in technical jargon or pixel counting. A great game is one that respects your time, sparks your imagination, and leaves a lasting impression.
+                </p>
+                <p>
+                    Whether it's a sprawling 100-hour RPG or a tight 2-hour indie experience, every game is judged on its own merits and its ability to deliver a compelling experience.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="page-content hidden">
+             <div class="card p-8 max-w-xl mx-auto">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center">Contact Us</h2>
+                <form>
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="form-input w-full" placeholder="Your Name">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="form-input w-full" placeholder="your.email@example.com">
+                    </div>
+                    <div class="mb-8">
+                        <label for="message" class="block text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="form-input w-full" placeholder="Your message..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="border-t-2 border-cyan-400/20 mt-12">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-400">
+            <p>&copy; 2024 Gamers Guru Reviews. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page-content');
+
+            // Function to handle page switching
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    if (page.id === pageId) {
+                        page.classList.remove('hidden');
+                    } else {
+                        page.classList.add('hidden');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${pageId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            // Add click event listeners to nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const pageId = this.getAttribute('href').substring(1); // Get id from href (e.g., "home")
+                    showPage(pageId);
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on page change
+                });
+            });
+
+            // Show initial page based on URL hash or default to 'home'
+            const initialPage = window.location.hash.substring(1) || 'home';
+            showPage(initialPage);
+        });
+    </script>
+</body>
+</html>
